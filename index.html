@@ -1,0 +1,236 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Inscripciones | Escuela Técnica U.O.C.R.A. Islas Malvinas</title>
+
+    <link rel="stylesheet" href="assets/styles.css">
+
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"
+        defer>
+    </script>
+
+    <script src="config.js" defer></script>
+    <script src="assets/app.js" defer></script>
+</head>
+
+<body>
+
+    <header>
+        <a class="brand" href="#">
+            <b>UO</b>
+            <span>
+                <strong>Escuela Técnica U.O.C.R.A.</strong>
+                <small>Islas Malvinas · Portal de inscripción</small>
+            </span>
+        </a>
+
+        <a href="#oferta">Ver formaciones</a>
+    </header>
+
+    <main>
+
+        <!-- PORTADA -->
+        <section class="hero">
+            <div>
+                <small>ESCUELA TÉCNICA U.O.C.R.A. · ISLAS MALVINAS</small>
+
+                <h1>
+                    Elegí tu próxima<br>
+                    <em>formación técnica.</em>
+                </h1>
+
+                <p>
+                    Conocé las formaciones disponibles, elegí la que te interesa
+                    y completá su formulario oficial de inscripción.
+                </p>
+
+                <a class="btn" href="#oferta">Ver opciones →</a>
+            </div>
+
+            <div class="art">
+                <div>
+                    ⌘
+                    <strong>Aprender</strong>
+                    <small>Crear · Resolver · Crecer</small>
+                </div>
+            </div>
+        </section>
+
+        <!-- PASOS DE INSCRIPCIÓN -->
+        <section class="wrap steps">
+
+            <small>¿CÓMO ME INSCRIBO?</small>
+            <h2>En tres pasos simples</h2>
+
+            <div class="three">
+
+                <article>
+                    <b>01</b>
+                    <h3>Elegí una formación</h3>
+                    <p>Revisá las opciones disponibles.</p>
+                </article>
+
+                <article>
+                    <b>02</b>
+                    <h3>Abrí el formulario</h3>
+                    <p>Entrá al formulario oficial de esa formación.</p>
+                </article>
+
+                <article>
+                    <b>03</b>
+                    <h3>Completá tus datos</h3>
+                    <p>
+                        Ingresá la información solicitada y enviá tu
+                        preinscripción.
+                    </p>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- OFERTA FORMATIVA -->
+        <section id="oferta" class="offer">
+
+            <div class="wrap">
+
+                <small>OFERTA FORMATIVA</small>
+                <h2>¿En qué te gustaría formarte?</h2>
+
+                <p>
+                    Seleccioná una propuesta para ver sus detalles y
+                    acceder a su formulario.
+                </p>
+
+                <div id="course-list" class="courses"></div>
+
+            </div>
+        </section>
+
+        <!-- CÓDIGO QR -->
+        <section class="wrap qr">
+
+            <div>
+                <small>ACCESO RÁPIDO</small>
+
+                <h2>
+                    Compartí el portal<br>
+                    con un código QR
+                </h2>
+
+                <p>
+                    Cuando publiques este sitio en Internet, el QR permitirá
+                    abrirlo desde la cámara del celular.
+                </p>
+
+                <label for="site-url">
+                    Dirección pública del sitio
+                </label>
+
+                <div class="url">
+
+                    <input
+                        id="site-url"
+                        placeholder="https://tu-sitio.edu.ar"
+                    >
+
+                    <button id="make-qr" class="btn">
+                        Crear QR
+                    </button>
+
+                </div>
+
+                <small>
+                    No uses localhost para compartirlo:
+                    solo funciona en tu computadora.
+                </small>
+            </div>
+
+            <div class="qrbox">
+
+                <div id="qrcode">
+                    QR<br>
+                    <small>Tu código aparecerá aquí</small>
+                </div>
+
+                <p id="qr-status">
+                    Ingresá la dirección pública y seleccioná Crear QR.
+                </p>
+
+                <button id="download-qr" disabled>
+                    Descargar imagen QR
+                </button>
+
+            </div>
+        </section>
+
+        <!-- CONTACTO -->
+        <section class="contact">
+
+            <div>
+                <small>¿TENÉS DUDAS?</small>
+
+                <h2>Estamos para orientarte.</h2>
+
+                <p>
+                    Consultá los canales oficiales de la Escuela Técnica
+                    U.O.C.R.A. “Islas Malvinas”.
+                </p>
+            </div>
+
+            <a
+                id="contact-link"
+                class="btn"
+                href="mailto:informes@institucion.edu.ar"
+            >
+                Contactar
+            </a>
+
+        </section>
+
+    </main>
+
+    <!-- PIE DE PÁGINA -->
+    <footer>
+        © <span id="year"></span>
+        Escuela Técnica U.O.C.R.A. “Islas Malvinas” ·
+        Portal informativo y de preinscripción
+    </footer>
+
+    <!-- VENTANA DE DETALLES -->
+    <dialog id="course-dialog">
+
+        <button id="close-dialog" class="close">×</button>
+
+        <small>DETALLES DE LA FORMACIÓN</small>
+
+        <h2 id="dialog-title"></h2>
+
+        <p id="dialog-description"></p>
+
+        <div id="dialog-meta"></div>
+
+        <a
+            id="form-link"
+            class="btn"
+            href="#"
+            target="_blank"
+            rel="noopener"
+        >
+            Ir al formulario ↗
+        </a>
+
+        <p class="note">
+            El formulario se abrirá en otra pestaña.
+            Verificá que sea el oficial antes de completar tus datos.
+        </p>
+
+    </dialog>
+
+</body>
+</html>
